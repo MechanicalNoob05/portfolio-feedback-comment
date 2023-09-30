@@ -1,5 +1,5 @@
 var jwt = require('jsonwebtoken');
-const JWT_SECRET = 'jhatu';
+const JWT_SECRET = 'internwala_project';
 
 const fetchuser=(req, res,next) => {
     const token=req.header('auth-token');

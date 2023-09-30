@@ -12,6 +12,12 @@ const userSchema = new mongoose.Schema({
 		type:String,
 		required:true
 	},
+	projectlist: [
+		{
+			type: mongoose.Schema.Types.ObjectId, 
+			required: false, ref: "project"
+		}
+	],
 	created:{
 		type:Date,
 		required:true,
@@ -20,4 +26,4 @@ const userSchema = new mongoose.Schema({
 
 })
 
-module.exports = mongoose.model('User',userSchema)
+module.exports = mongoose.model('user',userSchema)

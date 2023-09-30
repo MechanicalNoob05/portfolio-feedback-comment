@@ -5,7 +5,7 @@ const User = require('../models/user')
 const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
-const JWT_SECRET = 'jhatu';
+const JWT_SECRET = 'internwala_project';
 
 router.post('/login', [body('password', 'Enter a valid password').exists(), body('email', 'Enter a valid Email').isEmail()], async (req, res) => {
     ("Processing a request to LOgin");
