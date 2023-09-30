@@ -63,5 +63,13 @@ router.get('/', fetchuser,async (req, res) => {
 		res.status(500).json({ message: err.message })
 	}
 })
-
+router.get('/id', fetchuser,async (req, res) => {
+	const userid = req.user.id
+	try {
+		const projectlist = await Project.find({_id:req.body.id}).populate({path:"tasks"}).populate({path:"colaborator"})
+		res.json(projectlist)
+	} catch (err) {
+		res.status(500).json({ message: err.message })
+	}
+})
 module.exports = router
