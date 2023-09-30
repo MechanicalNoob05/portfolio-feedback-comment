@@ -9,11 +9,12 @@ const taskSchema = new mongoose.Schema({
 		required:false
 	},
 	start_date:{
-		type:String,
-		required:true
+		type:Date,
+		required:true,
+		default: Date.now
 	},
 	end_date:{
-		type:String,
+		type:Date,
 		required:true
 	},
 	priorty:{
