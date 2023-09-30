@@ -57,7 +57,7 @@ router.delete('/', fetchuser, async (req, res) => {
 router.get('/', fetchuser,async (req, res) => {
 	const userid = req.user.id
 	try {
-		const projectlist = await Project.find().populate({path:"tasks"})
+		const projectlist = await Project.find().populate({path:"tasks"}).populate({path:"colaborator"})
 		res.json(projectlist)
 	} catch (err) {
 		res.status(500).json({ message: err.message })
